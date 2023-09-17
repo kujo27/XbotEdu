@@ -44,19 +44,17 @@ public class DriveSubsystem extends BaseDriveSubsystem {
         // an example, here is some code that has the frontLeft motor to spin according
         // to
         // the value of leftPower:
-        frontLeft.simpleSet(leftPower);
-        frontRight.simpleSet(rightPower);
-    }
-
-    public void togglePrecisionMode() {
         if (precisionMode) {
-            precisionMode = false;
-            tankDrive(1.0, 1.0);
+            frontLeft.simpleSet(leftPower / 2);
+            frontRight.simpleSet(rightPower / 2);
         }
         else {
-            precisionMode = true;
-            tankDrive(0.5, 0.5);
+            frontLeft.simpleSet(leftPower);
+            frontRight.simpleSet(rightPower);
         }
+    }
+    public void togglePrecisionMode() {
+            precisionMode = !precisionMode;
     }
     
     @Override
