@@ -18,6 +18,8 @@ public class DriveSubsystem extends BaseDriveSubsystem {
     public final XCANTalon frontLeft;
     public final XCANTalon frontRight;
 
+    public boolean precisionMode;
+
     private final double simulatedEncoderFactor = 256.0 * 39.3701; //256 "ticks" per meter, and ~39 inches in a meter
 
     @Inject
@@ -43,6 +45,18 @@ public class DriveSubsystem extends BaseDriveSubsystem {
         // to
         // the value of leftPower:
         frontLeft.simpleSet(leftPower);
+        frontRight.simpleSet(rightPower);
+    }
+
+    public void togglePrecisionMode() {
+        if (precisionMode) {
+            precisionMode = false;
+            tankDrive(1.0, 1.0);
+        }
+        else {
+            precisionMode = true;
+            tankDrive(0.5, 0.5);
+        }
     }
     
     @Override
