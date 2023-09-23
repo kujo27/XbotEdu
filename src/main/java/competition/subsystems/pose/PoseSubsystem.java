@@ -15,6 +15,8 @@ public class PoseSubsystem extends BasePoseSubsystem {
 
     public double scalingFactorFromTicksToInches = 1.0 / 256.0;
     
+
+
     @Inject
     public PoseSubsystem(XGyroFactory gyroFactory, PropertyFactory propManager, DriveSubsystem drive) {
         super(gyroFactory, propManager);

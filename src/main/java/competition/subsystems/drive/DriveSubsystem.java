@@ -20,6 +20,7 @@ public class DriveSubsystem extends BaseDriveSubsystem {
 
     public boolean precisionMode;
 
+    
     private final double simulatedEncoderFactor = 256.0 * 39.3701; //256 "ticks" per meter, and ~39 inches in a meter
 
     @Inject
@@ -52,10 +53,37 @@ public class DriveSubsystem extends BaseDriveSubsystem {
             frontLeft.simpleSet(leftPower);
             frontRight.simpleSet(rightPower);
         }
+        
+    
+    
+    
+    
+    
     }
     public void togglePrecisionMode() {
             precisionMode = !precisionMode;
+            // if (precisionMode) {
+            //     precisionMode = false;
+            // }
+            // else {
+            //     precisionMode = true;
+            // }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     @Override
     public void periodic() {
