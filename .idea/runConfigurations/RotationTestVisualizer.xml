@@ -1,11 +1,13 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="RotationTestVisualizer" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="ALTERNATIVE_JRE_PATH" value="11" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
     <option name="MAIN_CLASS_NAME" value="xbot.edubot.rotation.RotationTestVisualizer" />
-    <module name="Repos.XbotEdu.test" />
+    <module name="XbotEdu.test" />
     <option name="WORKING_DIRECTORY" value="$ProjectFileDir$/build/jni/release" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="xbot.edubot.rotation.*" />
+        <option name="PATTERN" value="xbot.edubot.linear.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

@@ -30,6 +30,7 @@ public class TurnLeft90DegreesCommand extends BaseCommand {
     public void initialize() {
         startingAngle = pose.getCurrentHeading().getDegrees();
         goalAngle = 90;
+
     }
 
     @Override
@@ -41,7 +42,7 @@ public class TurnLeft90DegreesCommand extends BaseCommand {
             //makes the angle positive
             currentAngle = 360 + pose.getCurrentHeading().getDegrees() - startingAngle;
         }
-        
+
         //error is goal angle - current angle
         error = goalAngle - currentAngle;
 
@@ -59,27 +60,12 @@ public class TurnLeft90DegreesCommand extends BaseCommand {
 
     @Override
     public boolean isFinished() {
-        double error =  goalAngle - currentAngle;
         double rotation = currentAngle - oldAngle;
-        
+        double error = goalAngle - currentAngle;
         if (Math.abs(error) < 0.1 && Math.abs(rotation) < 0.1) {
-         
-            drive.tankDrive(0,0);
+            drive.tankDrive(0, 0);
             return true;
         }
         return false;
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }
